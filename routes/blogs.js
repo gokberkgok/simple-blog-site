@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 router.get('', (req,res) => {
-    const locals = {
+    const locals  = {
         title:"Blog Title",
         description : "Simple blog site made by - Gokberk"
     }
@@ -11,7 +11,7 @@ router.get('', (req,res) => {
 })
 
 router.get('/blogs', (req,res) => {
-    res.render('blogs')
+   
 })
 
 module.exports = router;
