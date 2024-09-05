@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Ekle</title>
+    <link rel="stylesheet" href="/add-blog.css"> <!-- CSS dosyanızın yolu -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>Yeni Blog Ekle</h2>
+        <form action="/admin/add" method="post">
+            <div class="form-group">
+                <label for="title">Başlık:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Kategori:</label>
+                <input type="text" id="category" name="category" required>
+            </div>
+                    
+            <div class="form-group">
+                <label for="image_url">Resim URL:</label>
+                <input type="text" id="image_url" name="image_url">
+            </div>
+            
+            <textarea id="editor" name="content"></textarea>  <!-- CKEditor Editörü -->
+    
+            <button type="submit">Blog Ekle</button>
+        </form>
+    </div>
+
+</body>
+<script>
+    ClassicEditor
+      .create(document.querySelector('#editor'))
+      .catch(error => {
+          console.error(error);
+      });
+  </script>
+</html>

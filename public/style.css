@@ -1,0 +1,151 @@
+:root {
+    --black: #1c1c1c;
+    --gray: #71717A;
+    --border-radius: 8px;
+    --font-size-base: 16px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    background-color: #FAF5EE;
+}
+
+.container {
+    max-width: 982px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--gray);
+}
+
+.header_logo {
+    font-weight: 800;
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.header_logo:hover {
+    text-decoration: underline;
+}
+
+/* Header Navigation */
+.header_nav {
+    display: flex;
+    justify-content: center;
+}
+
+.header_nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.header_nav ul a {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--black);
+    transition: color 0.3s ease;
+}
+
+.header_nav ul a:hover {
+    text-decoration: underline;
+    color: var(--gray);
+}
+
+.header_nav ul a:active {
+    color: var(--gray);
+}
+
+/* Header Button */
+.header_button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header_button button {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 6px 12px;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.header_button button:hover {
+    border-color: var(--black);
+}
+
+/* Search Icon */
+.header_button button i {
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+
+    .header_nav {
+        margin-top: 10px;
+    }
+}
+
+
+/**/
+/* Wrapper */
+.wrapper {
+    padding: 50px 0;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Yazı ve resim arasındaki boşluk */
+    align-items: center;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+.main-content p {
+    font-size: 22px;
+    line-height: 1.8;
+    color: var(--black);
+    flex: 2; /* Paragrafa esneklik ver */
+}
+
+.main-content img {
+    max-width: 400px;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+.latest_blogs{
+    gap: 10px; /* Yazı ve resim arasındaki boşluk */
+    max-width: 800px;
+    margin-top: 60px;
+}
