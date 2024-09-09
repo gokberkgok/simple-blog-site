@@ -149,3 +149,76 @@ body {
     max-width: 800px;
     margin-top: 60px;
 }
+
+/* Recent Posts */
+.recents {
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.recent-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #000; /* Metin rengi */
+    
+}
+
+.meta-title {
+    font-size: 18px;
+}
+
+.recent-meta a {
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+}
+.recent-meta a :hover{
+    color: #434343;
+}
+.recent-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Esnek grid düzeni */
+    gap: 40px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd; /* Hafif gri kenarlık */
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    overflow: hidden; /* Taşmayı önle */
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+article a{
+    text-decoration: none;
+}
+article:hover{
+    transform: translateY(-10px);
+}
+article img {
+    width: 100%; /* Resmi tam genişlikte yap */
+    height: 150px; /* Sabit yükseklik */
+    object-fit: cover; /* Resmi kapsama */
+}
+
+article h7 {
+    font-size: 1.4rem;
+    margin: 10px 0 0;
+    color: #333; /* Başlık rengi */
+}
+
+.recent-divider {
+    border: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+.post-details h3{
+    color: #000;
+}
+.post-details h3:hover{
+    color: #434343;
+}
+

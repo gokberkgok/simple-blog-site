@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title %></title>
+    <meta name="description" content=" <%= locals.description %> ">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../post.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body> 
+    <div class="container">
+        <%- include('layouts/header.ejs') %>
+        <div class="post-wrapper">
+            <div class="post-header">
+                <h1 class="post-title"><%- blogs.title %></h1>
+                <div class="post-meta">
+                    <p class="post-author"><%= blogs.author %><i class="material-icons">edit</i></p>
+                    <p class="post-date"><%= new Date(blogs.created_at).toDateString() %></p>
+                </div>
+            </div>
+            <div class="post-content">
+                <%- blogs.content %>
+            </div>
+            <div class="post-footer">
+                <hr class="post-divider">
+                <div class="social-media-icons">
+                    <!-- Sosyal medya ikonlarını buraya ekleyebilirsiniz -->
+                    <i class="material-icons">thumb_up</i>
+                    <i class="material-icons">comment</i>
+                    <i class="material-icons">share</i>
+                </div>
+            </div>
+        </div>
+        <%- include('layouts/recent-posts.ejs') %>
+        <%- include('layouts/footer.ejs') %>
+
+    </div>
+
+
+</body>
+</html>

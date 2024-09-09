@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Düzenle</title>
-    <link rel="stylesheet" href="/styles.css"> <!-- CSS dosyanızın yolu -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/ckeditor.js"></script>
+    <link rel="stylesheet" href="/add-blog.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,33 +13,54 @@
         <% blogs.forEach(function (blog) { %>
             <form action="/admin/edit/<%= blog.id %>" method="post">
                 <div class="form-group">
-                    <label for="title">Başlık:</label>
+                    <label for="title">Title:</label>
                     <input type="text" id="title" name="title" value="<%= blog.title %>" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="category">Kategori:</label>
-                    <input type="text" id="category" name="category" value="<%= blog.category %>" required>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <% categories.forEach(function(category) { %>
+                            <option value="<%= category.name %>" <% if (category.name === blog.category) { %>selected<% } %>><%= category.name %></option>
+                        <% }) %>
+                    </select>
+                </div>      
+                <div class="form-group">
+                    <label for="content">Content:</label>
+                    <div class="editor-container">
+                        <textarea id="editor" name="content"><%- blog.content %> </textarea> <!-- CKEditor Editörü -->
+                    </div>
+                   
                 </div>
-                
-                <label for="content">İçerik:</label>
-                <textarea id="content" name="content" required><%= blog.content %></textarea>
                 <div class="form-group">
-                    <label for="image_url">Resim URL:</label>
+                    <label for="image_url">Image URL:</label>
                     <input type="text" id="image_url" name="image_url" value="<%= blog.image_url %>">
                 </div>
-                
-                <button type="submit">Blogu Güncelle</button>
+                <button type="submit">Confirm</button>
+                <a href="/admin" class="btn-cancel">Cancel</a>
             </form>
        <% }) %>      
     </div>
-    
     <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .catch(error => {
-                console.error(error);
-            });
+     ClassicEditor
+    .create(document.querySelector('#editor'), {
+        editor : {
+           
+            theme: 'dark'
+        },
+        toolbar: [
+            'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|', 'codeBlock', 'undo', 'redo','fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+        ],
+        image: {
+            toolbar: ['imageTextAlternative', 'imageStyle:full', 'imageStyle:side']
+        },
+        mediaEmbed: {
+            previewsInData: true
+        }
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
     </script>
 </body>
 </html>

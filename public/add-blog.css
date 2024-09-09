@@ -1,5 +1,15 @@
+:root {
+    --gray: #71717A;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--black);
+    background-color: #FAF5EE;
+}
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -20,7 +30,11 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+.form-group select{
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 button {
     padding: 10px 20px;
     border: none;
@@ -33,4 +47,25 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.btn-cancel{
+    position: relative;
+    top: 1px;
+    padding: 7px 14px;
+    border: none;
+    background-color: #f8191d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+   
+}
+.btn-cancel:hover {
+    background-color: #8c1818;
+}
+.editor-container {
+    width: 100%; /* veya ihtiyaca göre bir genişlik */
+    height: 500px; /* istediğiniz yüksekliği belirleyin */
+    overflow-y: auto; /* dikey kaydırma çubuğunu etkinleştirin */
 }

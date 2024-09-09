@@ -7,18 +7,35 @@
     <meta name="description" content=" <%= locals.description %> ">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="blogs.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class="container">
         <%- include('layouts/header.ejs') %>
-        <div class="wrapper">
-            <%= locals.title %>
-            
+        <div class="blog-admin-wrapper">
+            <div class="blog-list">
+                <% blogs.forEach(function(blog) { %>
+                    <div class="blog-item">
+                        <a href="post/<%= blog.id %>" class="blog-link">
+                            <p class="author"><%= blog.author %> <i class="material-icons">edit</i></p>
+                            <p class="date"><%= blog.created_at.toDateString() %></p>
+                            <img src="<%= blog.image_url %>" alt="<%= blog.title %>" class="blog-image">
+                            <div class="blog-details">
+                                <h3><%= blog.title %></h3>
+                                <p class="category"><%= blog.category %></p>
+                               
+                            </div>
+
+                        </a>
+                       
+                    </div>
+                <% }) %>
+            </div>
         </div>
         <%- include('layouts/footer.ejs') %>
     </div>
-   
-  
 </body>
 </html>
