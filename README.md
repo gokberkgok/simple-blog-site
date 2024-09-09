@@ -2,6 +2,8 @@
 <h4 align="center">Simple blog site using NodeJS, Express and MySQL<br>
 <br>
   
+[Video](https://streamable.com/ibsbup)
+
 Home ![1](https://github.com/user-attachments/assets/9564e8ce-4118-45e3-895e-beac830f769f)
 
 Blogs ![2](https://github.com/user-attachments/assets/6af69373-9db2-4f05-a2d5-59a8f9cc5901)
