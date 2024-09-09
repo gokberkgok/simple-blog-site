@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
     <link rel="stylesheet" href="../admin.css">
-
 </head>
 <body>
     <div class="container">
       <div class="blog-admin-wrapper">
-        <h2>Blog Yönetimi</h2>
+        <h2>Blog Moderation</h2>
+        <div class="btn-meta">
+            <a href="/admin/add" class="btn-add">New Post</a>
+            <a href="/" class="btn-add">Go to website</a>
+        </div>
+       
         <div class="blog-list">
             <% blogs.forEach(function(blog) { %>
                 <div class="blog-item">
@@ -22,27 +26,16 @@
                     <div class="blog-details">
                         <h3><%= blog.title %></h3>
                         <p class="category"><%= blog.category %></p>
-                        <p class="date">Tarih: <%= blog.created_at.toDateString() %></p>
+                        <p class="date">Date: <%= blog.created_at.toDateString() %></p>
                         <div class="admin-actions">
-                            <a href="/admin/edit/<%= blog.id %>" class="btn-edit">Düzenle</a>
-                            <a href="/admin/delete/<%= blog.id %>" class="btn-delete">Sil</a>
+                            <a href="/admin/edit/<%= blog.id %>" class="btn-edit">Edit</a>
+                            <a href="/admin/delete/<%= blog.id %>" class="btn-delete">Delete</a>
                         </div>
                     </div>
                 </div>
             <% }) %>
         </div>
-    
-        <a href="/admin/add" class="btn-add">Yeni Blog Ekle</a>
     </div>
-    
-
-
-      <!--  <form action="/admin/blog-add" method="post">
-        <input type="text" name="title" placeholder="Blog Başlığı">
-        <textarea id="editor" name="content"></textarea>
-        <button type="submit">Blog Ekle</button>
-      </form>-->
-
     </div>   
 </body>
 <script>

@@ -66,6 +66,6 @@ button:hover {
 }
 .editor-container {
     width: 100%; /* veya ihtiyaca göre bir genişlik */
-    height: 500px; /* istediğiniz yüksekliği belirleyin */
+    height: auto; /* istediğiniz yüksekliği belirleyin */
     overflow-y: auto; /* dikey kaydırma çubuğunu etkinleştirin */
 }

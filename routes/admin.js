@@ -84,7 +84,7 @@ router.get('/delete/:id', async (req, res) => {
     try {
         await db.query( 'DELETE FROM blogs WHERE id = ?',  [blogId] );
         res.redirect('/admin'); // Başarıyla eklendiğinde admin sayfasına yönlendir
-        console.log(`${blogId} id blog silindi`)
+        console.log(`Deleted ${blogId} blog id`)
     } catch (error) {
         console.error('Veritabanı hatası:', error);
         res.status(500).send('Veritabanı hatası');

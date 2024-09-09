@@ -11,26 +11,25 @@
 </head>
 <body>
     <div class="container">
-        <h2>Yeni Blog Ekle</h2>
+        <h2>Add New Post</h2>
         <form action="/admin/add" method="post">
             <div class="form-group">
-                <label for="title">Başlık:</label>
+                <label for="title">Title:</label>
                 <input type="text" id="title" name="title" required>
             </div>
 
             <div class="form-group">
-                <label for="content">İçerik:</label>
+                <label for="content">Content:</label>
                 <textarea id="editor" name="content"></textarea> <!-- CKEditor Editörü -->
             </div>
 
             <div class="form-group">
-                <label for="image_url">Resim Ekle:</label>
+                <label for="image_url">Image URL:</label>
                 <!--<input type="file" id="image_upload" name="image_upload" accept="image/*">-->
-                <!-- Ayrıca resim URL'si girilebilecek bir alan -->
-                <input type="text" id="image_url" name="image_url" placeholder="Resim URL'i girin">
+                <input type="text" id="image_url" name="image_url" placeholder="Enter a URL">
             </div>
             <div class="form-group">
-                <label for="category">Kategori:</label>
+                <label for="category">Category:</label>
                 <select id="category" name="category" required>
                     <% categories.forEach(function(category) { %>
                         <option value="<%= category.name %>"><%= category.name %></option>
@@ -38,7 +37,7 @@
                 </select>
             </div>
            
-            <button type="submit">Blog Ekle</button>
+            <button type="submit">Add Post</button>
         </form>
     </div>
 
@@ -51,5 +50,9 @@
         .catch(error => {
             console.error(error);
         });
+    $("image_upload").change(function (e) { 
+        e.preventDefault();
+        console.log(URL.apply(e));
+    });
 </script>
 </html>
