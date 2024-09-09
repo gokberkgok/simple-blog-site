@@ -41,3 +41,6 @@ Server started on http://localhost:3000
 ## License
 
 MIT
+
+> GitHub [@gokberkgok](https://github.com/gokberkgok) &nbsp;&middot;&nbsp;
+> LinkedIn [@gokberkgok](https://www.linkedin.com/in/gokberkgok/)
