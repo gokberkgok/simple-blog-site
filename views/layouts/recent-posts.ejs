@@ -1,0 +1,23 @@
+<!-- recent-posts.ejs -->
+ <head>
+    <link rel="stylesheet" href="recent-posts.css">
+ </head>
+<div class="recents">
+    <div class="recent-meta">
+        <p class="meta-title">Recent Posts</p>
+        <p><a href="/blogs">See All</a></p>
+    </div>
+    <div class="recent-posts">
+        <% recentPosts.forEach(post => { %>
+            <article>
+                <a href="/post/<%= post.id %>"> <!--post click event-->
+                    <img src="<%= post.image_url %>" alt="<%= post.title %>" class="post-image">
+                    <div class="post-details">
+                        <h3 class="recent-post-title"><%= post.title %></h3>
+                    </div>
+                </a>
+                <hr class="recent-divider">
+            </article>
+        <% }); %>
+    </div>
+</div>

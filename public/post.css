@@ -1,0 +1,55 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.post-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+.post-header {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+.post-title {
+    font-size: 2.4rem;
+    margin: 0;
+    color: #333;
+}
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #777;
+}
+.post-author {
+    font-weight: bold;
+}
+.post-author i {
+    position: absolute;
+    scale: 0.80;
+}
+.post-content {
+    line-height: 2;
+    margin: 40px 0;
+    color: #333;
+}
+.post-footer {
+    margin-top: 20px;
+}
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.social-media-icons i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+.social-media-icons i:hover {
+    color: #007bff;
+}
