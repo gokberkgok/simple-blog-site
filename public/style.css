@@ -127,7 +127,6 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px; /* Yazı ve resim arasındaki boşluk */
-    align-items: center;
     max-width: 900px;
     margin-top: 20px;
 }

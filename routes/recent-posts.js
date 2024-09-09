@@ -7,7 +7,6 @@ router.use(async (req, res, next) => {
     try {
         // Son blogları çekin
         const [posts] = await db.query('SELECT id, title, image_url FROM blogs ORDER BY created_at DESC LIMIT 3;');
-        console.log('Fetched posts:', posts);
         res.locals.recentPosts = posts; // Veriyi res.locals üzerinde saklayın
         next(); // Bir sonraki middleware veya route handler'a geçiş yapın
     } catch (error) {
