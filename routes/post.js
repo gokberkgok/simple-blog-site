@@ -6,7 +6,7 @@ router.get('/:id', async (req, res, next) => {
     const blogId = req.params.id;
     try {
         const [blogs] = await db.query('SELECT * FROM blogs WHERE id = ?', [blogId]);
-        console.log(blogs); // Konsola veriyi yazdırın
+       // console.log(blogs); // Konsola veriyi yazdırın
         if (blogs.length > 0) {
             res.render('post', {blogs: blogs[0]} );
         } else {

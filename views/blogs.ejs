@@ -15,8 +15,22 @@
 <body>
     <div class="container">
         <%- include('layouts/header.ejs') %>
+        <div class="filtered-category-wrapper">
+            <div class="filtered-category-meta">
+                <a href="/blogs" class="blog-link">All</a> <!-- Tüm bloglar için filtre olmadan -->
+                <% categories.forEach(category => { %>
+                    <a href="/blogs?filter=<%= category.name %>" class="blog-link">
+                        <%= category.name[0].toUpperCase() + category.name.substring(1) %>
+                    </a>
+                   
+                <% }); %>
+            </div>
+        </div>
         <div class="blog-admin-wrapper">
             <div class="blog-list">
+                <% if(blogs =="" || blogs == null) { %>
+                    <p>Bu kategoride blog yok</p>
+                <% } else{ %>
                 <% blogs.forEach(function(blog) { %>
                     <div class="blog-item">
                         <a href="post/<%= blog.id %>" class="blog-link">
@@ -26,13 +40,13 @@
                             <div class="blog-details">
                                 <h3><%= blog.title %></h3>
                                 <p class="category"><%= blog.category %></p>
-                               
                             </div>
 
                         </a>
-                       
                     </div>
                 <% }) %>
+                <% } %> 
+                
             </div>
         </div>
         <%- include('layouts/footer.ejs') %>
