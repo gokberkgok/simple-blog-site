@@ -1,7 +1,5 @@
 const express = require("express");
-
 const connection = require('./db');
-
 require('dotenv').config();
 
 const app = express();
@@ -26,8 +24,10 @@ app.use('/blogs', blogsRouter);
 
 const adminRouter = require("./routes/admin");
 app.use('/admin', adminRouter);
+
 const postRouter = require("./routes/post");
 app.use('/post', postRouter);
+
 const recentPostsRouter = require('./routes/recent-posts');
 app.use('/recent-posts', recentPostsRouter);
 

@@ -185,9 +185,9 @@ body {
 article {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd; /* Hafif gri kenarlık */
-    border-radius: 8px; /* Köşeleri yuvarlat */
-    overflow: hidden; /* Taşmayı önle */
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    overflow: hidden; 
     padding: 10px;
     transition: transform 0.3s ease;
 }
