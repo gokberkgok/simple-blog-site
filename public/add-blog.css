@@ -65,7 +65,7 @@ button:hover {
     background-color: #8c1818;
 }
 .editor-container {
-    width: 100%; /* veya ihtiyaca göre bir genişlik */
-    height: auto; /* istediğiniz yüksekliği belirleyin */
+    width: 100%; 
+    height: auto; 
     overflow-y: auto; /* dikey kaydırma çubuğunu etkinleştirin */
 }

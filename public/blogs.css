@@ -86,7 +86,7 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    color: #000; /* Metin rengi */
+    color: #000;
     gap: 20px;
 }
 .filtered-category-meta p{
